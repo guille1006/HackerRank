@@ -1,7 +1,11 @@
-def timeConversion(s):
-    hora=(s[-2:])
-    if hora=="PM":
-        hora_nueva=str(int(s[:2])+12)
-        s=hora_nueva+s[2:]
-    return s[:-2]
-timeConversion("07:05:45PM")
+def kangaroo(x1, v1, x2, v2):
+    if v1==v2:
+        return "NO"
+    while x1<=1000000 and x2<=1000000:
+        x1+=v1
+        x2+=v2
+        print(x1,x2)
+        if x1==x2:
+            return "YES"
+    return "NO"
+print(kangaroo(4602,8519,7585,8362))
