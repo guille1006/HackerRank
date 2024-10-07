@@ -64,13 +64,40 @@ def timeConversion(s):
     return s[:-2]
 
 #10---------------------------------------------------------------------------------------------------
-
-
-
+def gradingStudents(grades):
+    solucion=[]
+    for i in grades:
+        if i<38:
+            solucion.append(i)
+        elif i%5>2:
+            solucion.append((i//5)*5+5)
+        else: 
+            solucion.append(i)
+    return solucion
 #11---------------------------------------------------------------------------------------------------
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    apples_landed=0
+    oranges_landed=0
+    for i in apples:
+        landed=i+a
+        if landed>=s and landed<=t:
+            apples_landed+=1
+    print(apples_landed)
+    for i in oranges:
+        landed=i+b
+        if landed>=s and landed<=t:
+            oranges_landed+=1
+    print(oranges_landed)
 #12---------------------------------------------------------------------------------------------------
-
-
+def kangaroo(x1, v1, x2, v2):
+    if v1==v2:
+        return "NO"
+    while x1<=100000000 and x2<=100000000:
+        x1+=v1
+        x2+=v2
+        if x1==x2:
+            return "YES"
+    return "NO"
 #---------------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------------
