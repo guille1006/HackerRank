@@ -161,7 +161,42 @@ def breakingRecords(scores):
             score_maximo+=1
     return [score_maximo,score_minimo]
 #15---------------------------------------------------------------------------------------------------
+def birthday(s, d, m):
+    if not s or m>len(s) or m==0 or d==0:
+        return 0
+        
+    if len(s)==m:
+        if sum(s)==d:
+            return 1
+        else:
+            return 0
+            
+    segmentos=[]
+    for i in range(len(s)-m+1):
+        segmentos.append(s[i:i+m])
+        print(s[i:i+m])
+    
+    sol=0
+    for i in segmentos:
+        if sum(i)==d:
+            sol+=1          
+    print(segmentos)
+    return sol
 #16---------------------------------------------------------------------------------------------------
+def divisibleSumPairs(n, k, ar):
+    if n==2:
+        if sum(ar)%k ==0:
+            return 1
+        else:
+            return 0
+    
+    sol=0
+    for i in range(len(ar)-1):
+        for j in range(i+1,len(ar)):
+            suma=ar[i]+ar[j]
+            if suma%k==0:
+                sol+=1
+    return sol
 #17---------------------------------------------------------------------------------------------------
 #18---------------------------------------------------------------------------------------------------
 
