@@ -1,15 +1,16 @@
 
-def flippingBits(n):
-    binario=bin(n)[2:]
-    longitud=len(binario)
-    binario2=""
-    for i in range(len(binario)):
-        if binario[i]=="1":
-            binario2+="0"
-        elif binario[i]=="0":
-            binario2+="1"
-    binario2="1"*(32-longitud)+binario2
-    decimal=int(binario2,2)
-    print(decimal)
+s=[[4, 8, 2],
+[4, 5, 7],
+[6, 1, 6]]
 
-flippingBits(9)
+
+print(s)
+square=[]
+for i in range(3):
+    square.append(s[0][i])
+square.append(s[1][2])
+for i in range(2, -1, -1):
+    print(i)
+    square.append([2][i])
+square.append(s[1][0])
+

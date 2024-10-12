@@ -285,7 +285,40 @@ def flippingBits(n):
     decimal=int(binario2, 2)
     return decimal
 #25---------------------------------------------------------------------------------------------------
+def pangrams(s):
+    s=s.lower()
+    s=s.replace(" ", "")
+    letras=[chr(i) for i in range(97, 123)]
+    diccci={}
+    for i in letras:
+        diccci[i]=0
+    for i in s:
+        diccci[i]+=1
+    if min(list(diccci.values()))>0:
+        print("pangram")
+    else:
+        print("not pangram")
 #26---------------------------------------------------------------------------------------------------
+def catAndMouse(x, y, z):
+    if x>y:
+        x-=y
+        z-=y
+        y-=y
+    elif y>x:
+        y-=x
+        z-=x
+        x-=x
+    else:
+        print("Mouse C")
+    distanciaA=abs(z-x)
+    distanciaB=abs(z-y)
+    
+    if distanciaA>distanciaB:
+        print("Cat B")
+    elif distanciaA<distanciaB:
+        print("Cat A")
+    else:
+        print("Mouse C")
 #27---------------------------------------------------------------------------------------------------
 #28---------------------------------------------------------------------------------------------------
 #29---------------------------------------------------------------------------------------------------
