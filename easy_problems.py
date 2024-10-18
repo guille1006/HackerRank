@@ -320,8 +320,33 @@ def catAndMouse(x, y, z):
     else:
         print("Mouse C")
 #27---------------------------------------------------------------------------------------------------
+def pickingNumbers(a):
+    lista=[0]*(max(a)+1)
+    for i in a:
+        lista[i]+=1
+    posibles_sol=[]
+    for i in range(len(lista)-1):
+        posibles_sol.append(lista[i]+lista[i+1])
+    return max(posibles_sol)
 #28---------------------------------------------------------------------------------------------------
+def designerPdfViewer(h, word):
+    letras=[chr(i) for i in range(97, 123)]
+    heights=[]
+    for letters in word:
+        heights.append(h[ord(letters)-97])
+    
+    return max(heights)*len(word)
 #29---------------------------------------------------------------------------------------------------
+def angryProfessor(k, a):
+    in_time=0
+    for i in a:
+        if i<=0:
+            in_time+=1
+
+    if in_time>=k:
+        return "NO"
+    else:
+        return "YES"
 #30---------------------------------------------------------------------------------------------------
 #31---------------------------------------------------------------------------------------------------
 #32---------------------------------------------------------------------------------------------------

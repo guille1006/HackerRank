@@ -70,6 +70,59 @@ def sumas(s):
     print(sumas)
     return sumas
 #2---------------------------------------------------------------------------------------------------
+def climbingLeaderboard(ranked, player):
+    positions=[]
+    sol=[]
+    for i in ranked:
+        if i in positions:
+            continue
+        else:
+            positions.append(i)
+    positions.append(0)
+
+    for i in player:
+        try:
+            index=positions.index(i)
+        except:
+            index= searchInsert(positions,i)
+            positions=positions[:index]+[i]+positions[index:]
+            sol.append(index+1)
+        else:
+            sol.append(1+positions.index(i))
+            
+    return sol  
+def searchInsert(nums: list[int], target: int) -> int:
+        left = 0
+        right = len(nums) - 1
+
+        while left <= right:
+            mid = (left + right) // 2
+
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] < target:
+                right = mid - 1
+            else:
+                left = mid + 1
+        
+        return left
+def climbingLeaderboard_por_un_random(ranked, player):
+    ranked = sorted(set(ranked), reverse=True)
+    rankFinal: list = []
+    #print(ranked)
+    
+    for ply in player:
+        for rankPos, rankScore in enumerate(ranked, 1):
+            if ply >= rankScore:
+                #print(ply, rankPos, rankScore)
+                rankFinal.append(rankPos)
+                break
+            if rankPos == len(ranked):
+                #print(ply, rankPos+1)
+                rankFinal.append(rankPos+1)
+    
+    return rankFinal
+    
 #3---------------------------------------------------------------------------------------------------
 #4---------------------------------------------------------------------------------------------------
 #5---------------------------------------------------------------------------------------------------
